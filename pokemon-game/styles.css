@@ -1,0 +1,64 @@
+:root {
+	--bg: #0b1020;
+	--panel: #141a2d;
+	--panel-2: #0e1430;
+	--text: #e9f0ff;
+	--muted: #a5b0d4;
+	--accent: #6ee7ff;
+	--accent-2: #7dd3fc;
+	--danger: #ff6b6b;
+	--success: #22c55e;
+	--hp-red: #ef4444;
+	--hp-yellow: #f59e0b;
+	--hp-green: #22c55e;
+	--chip: #1f2a44;
+	--border: #304069;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: 'Outfit', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+	background: radial-gradient(1200px 800px at 20% 0%, #0c1635, var(--bg));
+	color: var(--text);
+}
+
+#app { max-width: 1100px; margin: 0 auto; padding: 24px 20px 32px; }
+.app-header { display: flex; align-items: baseline; gap: 12px; }
+.app-header h1 { margin: 0; letter-spacing: 0.5px; font-size: 28px; }
+
+.layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 16px; align-items: start; }
+
+.battlefield { background: linear-gradient(160deg, var(--panel), var(--panel-2)); border: 1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
+
+.arena { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.side .pokemon-card { background: #0f1738; border: 1px solid var(--border); border-radius: 14px; display: grid; grid-template-columns: 130px 1fr; overflow: hidden; }
+.pokemon-card img { width: 100%; height: 160px; object-fit: contain; background: #0b1230; border-right: 1px solid var(--border); }
+.pokemon-card .info { padding: 10px 12px; }
+.pokemon-card h2 { margin: 0 0 6px; font-size: 18px; }
+
+.hp-bar { height: 12px; width: 100%; border-radius: 999px; background: #0a122c; border: 1px solid var(--border); overflow: hidden; position: relative; }
+.hp-fill { height: 100%; width: 100%; background: var(--hp-green); transition: width 260ms ease, background 200ms ease; box-shadow: inset 0 0 10px rgba(0,0,0,0.3); }
+
+.stats { display: flex; gap: 8px; margin-top: 8px; color: var(--muted); font-size: 12px; align-items: center; }
+.type-chip { background: var(--chip); border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px; text-transform: capitalize; }
+
+.log-panel { margin-top: 16px; background: #0a122c; border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; height: 180px; overflow: auto; }
+.log { margin: 0; padding: 0 0 0 16px; display: grid; gap: 6px; font-size: 14px; }
+
+.controls { background: linear-gradient(160deg, var(--panel), var(--panel-2)); border: 1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.35); display: grid; gap: 12px; }
+.row { display: grid; gap: 6px; }
+.row label { color: var(--muted); font-size: 14px; }
+select, button { height: 40px; border-radius: 10px; border: 1px solid var(--border); background: #0d1532; color: var(--text); padding: 0 10px; }
+select:focus, button:focus { outline: 2px solid var(--accent-2); }
+button { cursor: pointer; }
+button.primary { background: linear-gradient(180deg, #0ea5e9, #0284c7); border: none; font-weight: 700; }
+button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+button.ghost { background: #0d1532; }
+.moves { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.moves button { height: auto; padding: 8px 10px; line-height: 1.1; }
+
+.app-footer { margin-top: 12px; color: var(--muted); font-size: 12px; text-align: center; }
+
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .arena { grid-template-columns: 1fr; } }

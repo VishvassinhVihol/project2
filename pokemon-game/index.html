@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Pokémon Battle</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<div id="app">
+		<header class="app-header">
+			<h1>Pokémon Battle</h1>
+		</header>
+
+		<main class="layout">
+			<section class="battlefield">
+				<div class="arena">
+					<div class="side player">
+						<div class="pokemon-card">
+							<img id="player-sprite" alt="Player Pokémon" />
+							<div class="info">
+								<h2 id="player-name">Player</h2>
+								<div class="hp-bar" aria-label="Player HP">
+									<div id="player-hp" class="hp-fill"></div>
+								</div>
+								<div class="stats">
+									<span id="player-level"></span>
+									<span id="player-type" class="type-chip"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="side enemy">
+						<div class="pokemon-card">
+							<img id="enemy-sprite" alt="Enemy Pokémon" />
+							<div class="info">
+								<h2 id="enemy-name">Enemy</h2>
+								<div class="hp-bar" aria-label="Enemy HP">
+									<div id="enemy-hp" class="hp-fill"></div>
+								</div>
+								<div class="stats">
+									<span id="enemy-level"></span>
+									<span id="enemy-type" class="type-chip"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="log-panel">
+					<ol id="log" class="log"></ol>
+				</div>
+			</section>
+
+			<section class="controls">
+				<div class="row">
+					<label for="player-select">Choose your Pokémon</label>
+					<select id="player-select"></select>
+				</div>
+				<div class="row">
+					<label for="enemy-select">Choose opponent</label>
+					<select id="enemy-select"></select>
+				</div>
+				<div class="row moves" id="moves"></div>
+				<div class="row actions">
+					<button id="btn-start" class="primary">Start Battle</button>
+					<button id="btn-reset" class="ghost" disabled>Reset</button>
+				</div>
+			</section>
+		</main>
+
+		<footer class="app-footer">
+			<p>Built with vanilla JS. Not affiliated with Nintendo/GameFreak.</p>
+		</footer>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
